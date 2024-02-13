@@ -2,18 +2,24 @@
 interface Props {
 	title: string;
 	cardNo: string;
+	href: string;
 }
 
-const { title, cardNo } = Astro.props;
+const { title, cardNo, href } = Astro.props;
 ---
-
-<div class:list={["card", "card"+cardNo]}>
-	<h1 aria-label={title.length < 1 ? "Description" : title}>{title}</h1> 
+<a href={href} class:list={["card", "card"+cardNo]}>
+	<div class="titlediv"><h1 aria-label={title.length < 1 ? "Description" : title}>{title}</h1>
+	<h1>🔗</h1></div> 
 	<slot />
-</div>
+</a>
 <style>
 	.card:hover {
 		box-shadow: inset 0 0 0 5px #00ADB5;
+	}
+
+	.titlediv {
+		display: flex;
+		justify-content: space-between;
 	}
 
 	.card {
@@ -43,4 +49,8 @@ const { title, cardNo } = Astro.props;
 	.card5 { grid-area: 4 / 3 / 5 / 4; }
 	.card6 { grid-area: 1 / 4 / 4 / 5; }
 	.card7 { grid-area: 4 / 4 / 5 / 5; }
+
+	a {
+		text-decoration: none;
+	}
 </style>
