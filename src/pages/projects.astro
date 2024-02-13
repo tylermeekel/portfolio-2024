@@ -1,19 +1,48 @@
 ---
+import ProjectBox from '../components/ProjectBox.astro'
 import IndexLayout from '../layouts/IndexLayout.astro'
 ---
 
 <IndexLayout title='Projects'>
     <main>
         <h1>Projects</h1>
+        <ProjectBox title='YYCHacks Kiosk Idea' status='Completed' href=''
+            description="Built the backend for our YYCHacks Kiosk idea. Uses Go on top of the OpenAI API to handle voice recognition, and translation. Utilizes City of Calgary open datasets to provide location details for important public services to the front end."
+        />
+        <ProjectBox title='Gazelle Game Engine' status='Ongoing - Slow Progress' href='https://github.com/tylermeekel/Gazelle'
+            description="An implementation of The Cherno's Hazel game engine in Go. This is currently just a passion project, and work on it may be slow."
+        />
+        <ProjectBox title='Sophii AI Study' status='Ongoing - Slow Progress' href='https://github.com/tylermeekel/'
+            description="An AI study buddy web application that allows users to use AI to help them complete assignments, without the AI completing the work for them. Using intelligent prompting, get responses back from the AI endpoint that gives useful pointers and tips on how to best achieve the highest grade possible."
+        />
+        <ProjectBox title='Sheer File Sharing CLI' status='Completed - Extra Features Pending' href='https://github.com/tylermeekel/Sheer'
+            description="A filesharing CLI application that utilizes the WebRTC standard for realtime secure communication between sender and receiver. Allows customization of STUN and TURN servers so that users can pick exactly what level of security they want."
+        />
+        <ProjectBox title='EgoNote' status='Completed - Extra Features Pending' href='https://egonote.app'
+            description="A notetaking web application that uses Markdown to format note documents. Uses bcrypt and JSON Web Tokens for authentication. Uses Postgres to store user data and information."
+        />
+        <ProjectBox title='MERN Social Media Website' status='Completed - Not Hosted' href='https://github.com/tylermeekel/mern-social-media-app'
+            description="A social media application built using the MERN stack. Allows users to login and create posts to a public board, which other users can view and interact with."
+        />
+        <ProjectBox title='Kanban Web Application' status='Completed - Not Hosted' href='https://github.com/tylermeekel/kantban-web-todos'
+            description="A Kanban board application built using Svelte. Board is stored in browser localStorage."
+        />
     </main>
 </IndexLayout>
 
 <style>
     main {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         width: 80%;
-        margin-top: 10dvh;
-        height: 90dvh;
-        padding: 50px;
+        margin-top: 5dvh;
+        padding-bottom: 30px;
+        min-height: 90dvh;
 		color: #EEEEEE;
+    }
+
+    h1 {
+        margin-bottom: 10px;
     }
 </style>
